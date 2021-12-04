@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #fafafa;
+	font-family: "Rubik", sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+div.top-left-bg {
+	height: 520px;
+	width: 100vw;
+	border-radius: 0px 0px 50vh 50vh;
+	position: absolute;
+	background-image: linear-gradient(to bottom, #d300ff, #943aff);
+	top: 0;
+	margin-left: -60vw;
+}
+div.bottom-right-bg {
+	height: 520px;
+	width: 100vw;
+	border-radius: 50vh 50vh 0px 0px;
+	position: absolute;
+	background-color: #f9f4fa;
+	bottom: 0;
+	right: 0;
+	margin-right: -50vw;
+	z-index: -1;
+}
+/* Start styling the phone */
+div.phone-border {
+	position: relative;
+	width: 250px;
+	height: 520px;
+	border-radius: 40px;
+	border: 15px solid white;
+	top: 5vh;
+	left: 15vw;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+		rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+div.cameras-et-al {
+	height: 15px;
+	width: 90px;
+	margin: 0px auto;
+	background-color: white;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	top: -2px;
+}
+div.background-backup {
+	width: 100%;
+	height: 20px;
+	background-color: #f5f3f8;
+	margin-top: 48px;
+}
+div.screen-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	background-image: linear-gradient(to left, #d300ff, #943aff);
+	border-radius: 23px 23px 8px 8px;
+	padding-top: 20px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+a.btn-back {
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 0.8rem;
+	color: whitesmoke;
+}
+a.btn-back img {
+	width: 8px;
+	height: 10px;
+}
+div.hor-wrapper {
+	display: flex;
+	align-items: center;
+
+	justify-content: space-between;
+	column-gap: 8px;
+}
+div.ver-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 3px;
+}
+img.profile-photo {
+	width: 30px;
+	height: 30px;
+	border: 1px solid whitesmoke;
+	border-radius: 50%;
+}
+span.profile-name {
+	color: whitesmoke;
+	font-size: 0.8rem;
+}
+span.profile-status {
+	color: #e3b1f5;
+	font-weight: 400;
+	font-size: 0.5rem;
+}
+a.see-more {
+	color: #fdfdfd;
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+div.screen-content {
+	position: relative;
+	background-color: #f5f3f8;
+	padding: 10px 10px;
+	height: 423px;
+	border-radius: 0px 0px 23px 23px;
+	margin-top: -1px;
+}
+div.message-wrapper {
+	display: flex;
+	width: 0%;
+	height: 0px;
+	padding: 0px 0px;
+	margin-top: -100vh;
+	opacity: 0;
+}
+div.message-wrapper.received.line-1 {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+div.message-wrapper.received.line-2 {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+}
+
+div.message-wrapper.received {
+	justify-content: flex-start;
+}
+div.message-wrapper.sent {
+	justify-content: flex-end;
+}
+div.message-wrapper.sent.line-1 {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 4s;
+}
+div.message-wrapper.sent.line-2 {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 5.5s;
+}
+div.message-wrapper.received.line-3 {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 7.5s;
+}
+p.text-message {
+	padding: 8px 10px;
+	max-width: 140px;
+	margin: 0px;
+	margin-bottom: 8px;
+	font-size: 0.5rem;
+}
+p.text-message.received {
+	background-color: #ede6f4;
+	color: #a88bbe;
+	border-radius: 12px 12px 12px 3px;
+}
+p.text-message.sent {
+	background-color: white;
+	color: #8b8890;
+	border-radius: 12px 12px 3px 12px;
+}
+img.image-message {
+	width: 0px;
+	height: 0px;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+img.image-message.sent.first {
+	animation-name: img-message-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 3s;
+}
+img.image-message.sent.second {
+	animation-name: img-message-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 3.25s;
+}
+img.image-message.sent.third {
+	animation-name: img-message-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 3.5s;
+}
+img.image-message.sent {
+	float: right;
+	margin-right: 0px;
+	margin-left: 10px;
+}
+div.offer.received {
+	background-image: linear-gradient(to right, #d300ff, #943aff);
+	border-radius: 12px 12px 12px 3px;
+	padding: 8px 10px;
+	width: 80%;
+	margin-bottom: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	opacity: 0;
+}
+div.offer.received.offer-one {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 10s;
+}
+div.offer.received.offer-two {
+	animation-name: messsage-animation;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 10.25s;
+}
+.small-circle {
+	border: 2px #e3b1f5 solid;
+	background-color: transparent;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+}
+span.price {
+	font-weight: 700;
+	font-size: 0.8rem;
+	color: whitesmoke;
+}
+span.time-offer {
+	color: #e3b1f5;
+	font-size: 0.5rem;
+}
+div.add-message {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	border-radius: 20px;
+	padding: 3px 5px;
+	bottom: 10px;
+	width: 92%;
+}
+div.add-message button {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	outline: none;
+	border: none;
+	background-color: #422954;
+	color: whitesmoke;
+	font-size: 1rem;
+	padding-left: 13px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+div.add-message input[type="text"] {
+	outline: none;
+	border: none;
+	font-size: 0.5rem;
+}
+/* Create animation for messages */
+@keyframes messsage-animation {
+	0% {
+		width: 0%;
+		height: 0px;
+		opacity: 0;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0px;
+		display: flex;
+		width: 100%;
+		height: auto;
+		opacity: 100;
+	}
+}
+@keyframes img-message-animation {
+	0% {
+		width: 0px;
+		height: 0px;
+	}
+	50% {
+		width: 25px;
+		height: 25px;
+	}
+	100% {
+		width: 50px;
+		height: 50px;
+	}
+}
+/* End styling the phone */
+
+section.article {
+	position: relative;
+	width: 100vw;
+	padding: 5vw 10vw;
+}
+article {
+	width: 100%;
+}
+article h1 {
+	color: #402856;
+	font-weight: 500;
+	font-size: 32px;
+	margin-top: 100px;
+	text-align: center;
+}
+p.article-text {
+	text-align: center;
+	color: #a4a2a7;
+	line-height: 1.8;
+}
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	body {
+		width: 100vw;
+		overflow: hidden;
+	}
+	main {
+		position: relative;
+		margin-top: 15vh;
+		height: 600px;
+		left: 19vw;
+		display: flex;
+		align-items: center;
+		padding: 0px 0px;
+	}
+	section.article {
+		position: static;
+		float: right;
+		width: 45vw;
+		padding: 0px 0px;
+		margin-left: 5vw;
+	}
+	article h1 {
+		text-align: left;
+		margin-top: 0px;
+	}
+	p.article-text {
+		text-align: left;
+	}
+	div.top-left-bg {
+		width: calc(100vw / 2.8);
+		height: 90vh;
+		margin-left: -10vw;
+		z-index: -100;
+	}
+	div.bottom-right-bg {
+		width: calc(100vw / 2.8);
+		height: 90vh;
+		margin-right: -10vw;
+		z-index: -100;
+	}
+	div.phone-border {
+		top: 0;
+		left: 0;
+		width: 275px;
+	}
+	footer {
+		position: relative;
+		margin-top: 30vh;
+	}
+}
