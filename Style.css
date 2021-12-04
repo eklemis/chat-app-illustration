@@ -10,6 +10,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	width: 100vw;
+	position: relative;
 }
 
 div.top-left-bg {
@@ -23,14 +25,15 @@ div.top-left-bg {
 }
 div.bottom-right-bg {
 	height: 520px;
-	width: 100vw;
-	border-radius: 50vh 50vh 0px 0px;
+	width: 50vw;
+	border-radius: 50vh 0vh 0px 0px;
 	position: absolute;
 	background-color: #f9f4fa;
 	bottom: 0;
 	right: 0;
-	margin-right: -50vw;
+	margin-right: 0px;
 	z-index: -1;
+	overflow: hidden;
 }
 /* Start styling the phone */
 div.phone-border {
